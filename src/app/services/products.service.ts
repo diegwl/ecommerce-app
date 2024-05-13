@@ -34,4 +34,16 @@ export class ProductsService {
       })
     )
   }
+
+  searchProducts(text: string) {
+    this.con = `https://dummyjson.com/products/search?q=${text}`
+
+    return this.http.get(this.con).pipe(
+      map((val: any) => {
+        return {
+          products: val.products
+        };
+      })
+    )
+  }
 }

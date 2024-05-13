@@ -1,0 +1,24 @@
+<section class="text-gray-400 bg-gray-900 body-font">
+    <div class="flex flex-wrap m-4">
+      <form [formGroup]="searchData" (ngSubmit)="ngOnSearch()" class="flex md:flex-nowrap flex-wrap justify-center items-end w-full">
+        <div class="relative sm:w-64 w-40 sm:mr-4 mr-2">
+          <label for="footer-field" class="leading-7 text-sm text-gray-400">Search Products</label>
+          <input formControlName="text" type="text" id="footer-field" name="footer-field"
+            class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <button type="submit" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Search</button>
+      </form>
+      <div class="container px-5 py-24 mx-auto flex flex-wrap">
+      <div [routerLink]="['/products', product.id]" class="lg:w-1/4 md:w-1/2 p-4 w-full" *ngFor="let product of productsData?.products">
+        <a class="block relative h-48 rounded overflow-hidden">
+          <img alt="ecommerce" class="object-cover object-center w-full h-full block" [src]="product.images[0]">
+        </a>
+        <div class="mt-4">
+          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{ product.brand }}</h3>
+          <h2 class="text-white title-font text-lg font-medium">{{ product.title }}</h2>
+          <p class="mt-1">$ {{ product.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

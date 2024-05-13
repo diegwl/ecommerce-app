@@ -3,6 +3,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProductComponent } from './pages/product/product.component';
+import { SearchComponent } from './pages/search/search.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 export const routes: Routes = [
   {
@@ -20,8 +22,13 @@ export const routes: Routes = [
   },
   {
     'path': 'search',
-    component: HomeComponent,
+    component: SearchComponent,
     'title': 'Search Products'
+  },
+  {
+    'path': 'cart',
+    component: CartComponent,
+    'title': 'Cart'
   },
   {
     'path': '',
